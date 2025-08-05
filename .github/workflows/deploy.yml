@@ -1,16 +1,19 @@
 name: Terraform Dev Deployment
 
+# on:
+#   push:
+#     paths:
+#       - 'terraform/**'
+#     branches:
+#       - main
+#   pull_request:
+#     paths:
+#       - 'terraform/**'
+#     branches:
+#       - main
+
 on:
-  push:
-    paths:
-      - 'terraform/**'
-    branches:
-      - main
-  pull_request:
-    paths:
-      - 'terraform/**'
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   terraform:
