@@ -1,0 +1,9 @@
+variable "s3_bucket_name" {}
+variable "cloudfront_default_root_object" {}
+variable "auth0_domain" {}
+variable "auth0_provider_client_id" {}
+variable "auth0_provider_client_secret" {}
+variable "lambda_function_name" {}
+variable "lambda_handler" {}
+variable "lambda_runtime" {}
+variable "lambda_zip_path" {}
