@@ -44,8 +44,14 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      # - name: Zip Lambda function
+      #   run: zip -j lambda.zip lambdazip/index.js
+
+
       - name: Zip Lambda function
+        working-directory: .
         run: zip -j lambda.zip lambdazip/index.js
+
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
