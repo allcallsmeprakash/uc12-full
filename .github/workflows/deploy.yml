@@ -32,6 +32,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Configure AWS credentials using OIDC
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Zip Lambda function
+        run: zip -j lambda.zip lambdazip/index.js
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -52,3 +61,6 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve tfplan
+        
+      - name: Upload Web Files to S3
+        run: aws s3 sync ./website s3://${{ secrets.S3_BUCKET_NAME }} --delete
