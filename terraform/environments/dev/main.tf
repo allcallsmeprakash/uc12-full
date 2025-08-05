@@ -1,3 +1,18 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
+
+terraform {
+  required_providers {
+    auth0 = {
+      source  = "auth0/auth0"
+      version = "~> 1.0"
+    }
+  }
+}
+
+
 module "s3_cloudfront" {
   source = "../../modules/s3_cloudfront"
   s3_bucket_name = var.s3_bucket_name
