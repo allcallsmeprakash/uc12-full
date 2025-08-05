@@ -15,10 +15,15 @@ name: Terraform Dev Deployment
 on:
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
-  terraform:
+  deploy:
     name: Terraform Apply (Dev)
     runs-on: ubuntu-latest
+    environment: dev
     defaults:
       run:
         working-directory: terraform/environments/dev
@@ -36,8 +41,8 @@ jobs:
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::082041771564:role/github-actions-oidc-role-prod
-          aws-region: us-east-1
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Zip Lambda function
         run: zip -j lambda.zip lambdazip/index.js
