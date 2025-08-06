@@ -40,7 +40,6 @@ module "lambda" {
   lambda_function_name = var.lambda_function_name
   lambda_handler = var.lambda_handler
   lambda_runtime = var.lambda_runtime
-  lambda_zip_path = var.lambda_zip_path
 }
 
 module "api_gateway" {
