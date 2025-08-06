@@ -51,13 +51,9 @@ resource "aws_cognito_user_pool_domain" "user_pool_domain" {
   user_pool_id = aws_cognito_user_pool.user_pool.id
 }
 
-resource "aws_cognito_user_pool_domain" "default_domain" {
-  domain       = "narendiran-user-pool"  # unique prefix for your domain
-  user_pool_id = aws_cognito_user_pool.main.id
-}
 # Create a test user (optional - for development)
 resource "aws_cognito_user" "test_user" {
-  user_pool_id = aws_cognito_user_pool.ser_pool.id
+  user_pool_id = aws_cognito_user_pool.user_pool.id
   username     = "Admin"
 
   attributes = {
