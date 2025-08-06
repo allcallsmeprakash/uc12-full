@@ -32,7 +32,7 @@ resource "aws_cognito_user_pool_client" "user_pool_client" {
   allowed_oauth_scopes            = ["email", "openid", "profile"]
 
   callback_urls = [
-    "https://${var.cloudfront_domain_name}/index.html"
+    "https://hello-world-app-prod-domain.auth.us-east-1.amazoncognito.com/oauth2/idpresponse"
   ]
 
   logout_urls = [
