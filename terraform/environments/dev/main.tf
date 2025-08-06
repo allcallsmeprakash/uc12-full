@@ -23,7 +23,7 @@ module "auth0" {
   source = "../../../modules/auth0"
   auth0_domain = var.auth0_domain
   auth0_provider_client_id = var.auth0_provider_client_id
-  client_secret  = var.auth0_client_secret
+  auth0_provider_client_secret  = var.auth0_provider_client_secret
   cloudfront_domain_name = module.s3_cloudfront.cloudfront_domain_name
 }
 
