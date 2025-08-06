@@ -62,4 +62,6 @@ jobs:
         run: terraform apply -auto-approve
         
       - name: Upload Web Files to S3
-        run: aws s3 sync ./website s3://${{ secrets.S3_BUCKET_NAME }} --delete
+        working-directory: .
+        run: aws s3 sync website s3://${{ secrets.S3_BUCKET_NAME }} --delete
+
