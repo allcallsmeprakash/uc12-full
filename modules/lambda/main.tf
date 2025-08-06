@@ -24,6 +24,6 @@ resource "aws_lambda_function" "hello_world" {
   role             = aws_iam_role.lambda_exec_role.arn
   handler          = var.lambda_handler
   runtime          = var.lambda_runtime
-  filename         = "${path.module}/lambda.zip"
-  source_code_hash = filebase64sha256("${path.module}/lambda.zip")
+  filename         = "${path.module}/../../../environments/dev/lambda.zip"
+  source_code_hash = filebase64sha256("${path.module}/../../../environments/dev/lambda.zip")
 }
