@@ -12,8 +12,3 @@ variable "lambda_runtime" {
   description = "Runtime environment for the Lambda function"
   type        = string
 }
-
-variable "lambda_zip_path" {
-  description = "Path to the zipped Lambda function code"
-  type        = string
-}
