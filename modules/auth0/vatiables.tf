@@ -8,9 +8,10 @@ variable "auth0_provider_client_id" {
   type        = string
 }
 
-variable "auth0_provider_client_secret" {
-  description = "Auth0 client secret"
-  type        = string
+
+variable "client_secret" {
+  type      = string
+  sensitive = true
 }
 
 variable "cloudfront_domain_name" {
