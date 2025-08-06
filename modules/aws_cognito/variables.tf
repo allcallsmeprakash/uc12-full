@@ -5,6 +5,7 @@ variable "auth0_client_id" {
 
 variable "auth0_client_secret" {
   description = "Auth0 client secret"
+  sensitive   = true
   type        = string
 }
 
