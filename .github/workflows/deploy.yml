@@ -63,5 +63,5 @@ jobs:
         
       - name: Upload Web Files to S3
         working-directory: .
-        run: aws s3 sync website s3://${{ secrets.S3_BUCKET_NAME }} --delete
+        run: aws s3 sync website s3://hello-world-webapp-prod --delete
 
