@@ -31,5 +31,5 @@ resource "aws_lambda_function" "hello_world" {
   handler          = var.lambda_handler
   runtime          = var.lambda_runtime
   source_code_hash = filebase64sha256(data.archive_file.lambda_zip.output_path)
-  depends_on       = [aws_iam_role.lambda_exec]
+  depends_on       = [aws_iam_role.lambda_exec_role]
 }
