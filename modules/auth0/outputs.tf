@@ -5,6 +5,6 @@ output "auth0_client_id" {
 
 
 output "auth0_client_secret" {
-  value     = var.client_secret
+  value     = var.auth0_provider_client_secret
   sensitive = true
 }
