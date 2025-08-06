@@ -45,7 +45,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Zip Lambda function
-        run: zip -j lambda.zip lambdazip/index.js
+        run: zip -j lambda.zip lambda/index.js
 
 
 
