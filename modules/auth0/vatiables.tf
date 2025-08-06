@@ -9,7 +9,7 @@ variable "auth0_provider_client_id" {
 }
 
 
-variable "client_secret" {
+variable "auth0_provider_client_secret" {
   type      = string
   sensitive = true
 }
