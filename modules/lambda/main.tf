@@ -37,7 +37,7 @@ resource "aws_lambda_function" "hello_world" {
 
 
 resource "aws_cloudwatch_log_group" "api_gateway" {
-  name              = "/aws/apigateway/lambda-http-api"
+  name              = "/aws/apigateway/hello-world-api"
   retention_in_days = 7
 }
 
@@ -62,13 +62,13 @@ resource "aws_cloudwatch_dashboard" "main" {
               "AWS/ApiGateway",
               "4XXError",
               "ApiName",
-              "lambda-http-api"
+              "hello-world-api"
             ],
             [
               "AWS/ApiGateway",
               "5XXError",
               "ApiName",
-              "lambda-http-api"
+              "hello-world-api"
             ]
           ]
           period = 300
