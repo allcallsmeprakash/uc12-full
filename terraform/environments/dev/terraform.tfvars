@@ -3,9 +3,9 @@ s3_bucket_name                = "hello-world-webapp-prod"
 cloudfront_default_root_object = "index.html"
 
 # Auth0
-auth0_domain                  = "dev-gfew5m8jtuzrrhhw.us.auth0.com"
-auth0_provider_client_id     = "rZyBhpq7SsMgyhxXTPbjfmRunEZHDFNq"
-auth0_provider_client_secret = "iFLPIid-tlvMK9igrZfZGnWiV6cHJI1TNZRrLN_o-vHDmJ7lKbtXuxoNTxABAsq5"
+auth0_domain                  = "dev-msszoyzj3obvle20.us.auth0.com"
+auth0_provider_client_id     = "R1ZpnjCrxXgyWh9BfvNR54y8erVFfxG3"
+auth0_provider_client_secret = "LzBU-hUPHfUSxlNkbznL5xDt0OtcCHK1JqVxosiqbg561JGLAT4Z61k59NZ5Cxun"
 
 # Lambda
 lambda_function_name         = "hello-world-lambda"
