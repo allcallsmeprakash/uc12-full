@@ -11,4 +11,4 @@ auth0_provider_client_secret = "iFLPIid-tlvMK9igrZfZGnWiV6cHJI1TNZRrLN_o-vHDmJ7l
 lambda_function_name         = "hello-world-lambda"
 lambda_handler               = "index.handler"
 lambda_runtime               = "nodejs18.x"
-lambda_zip_path              = "lambdazip/hello_world.zip"
+lambda_zip_path              = "lambdazip.zip"
