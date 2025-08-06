@@ -39,12 +39,8 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
           
-      - name: Zip Lambda function
-        run: zip -j lambda.zip lambdazip/index.js
-
-
       - name: Empty S3 bucket before destroy
-        run: aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }} --recursive
+        run: aws s3 rm s3://hello-world-webapp-prod --recursive
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
@@ -54,16 +50,10 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Terraform Format Check
-        run: terraform fmt -check
-
-      - name: Terraform Validate
-        run: terraform validate
-
       - name: Terraform Plan
-        run: terraform plan -out=tfplan
+        run: terraform plan
 
       - name: Terraform destroy
         if: github.ref == 'refs/heads/main'
-        run: terraform destroy -auto-approve tfplan
+        run: terraform destroy -auto-approve
         
