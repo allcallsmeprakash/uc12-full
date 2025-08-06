@@ -49,7 +49,7 @@ jobs:
 
 
       - name: Zip Lambda function
-        working-directory: .
+        # working-directory: .
         run: zip -j lambdazip.zip lambdazip/index.js
 
 
