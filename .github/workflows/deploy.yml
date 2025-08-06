@@ -45,10 +45,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Zip Lambda function
-        working-directory: terraform/environments/dev
-        run: zip -j lambda.zip lambda/index.js
-
-
+        run: zip -j lambda.zip modules/lambda/index.js
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
